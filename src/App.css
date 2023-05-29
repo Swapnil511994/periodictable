@@ -109,7 +109,7 @@ nav.dark .toggler--slider {
   background-color: #000000;
   align-content: center;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   overflow-x: scroll;
 }
 
@@ -146,14 +146,6 @@ nav.dark .toggler--slider {
 
 }
 
-.group__header__item__line
-{
-  position: absolute;
-  top:0px;
-  left:0px;
-  border-bottom: 1px solid white;
-  /* transform: rotate(-45deg); */
-}
 
 .group__header__item > span
 {
@@ -176,4 +168,22 @@ nav.dark .toggler--slider {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
+}
+
+.period__header__item
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 80px;
+  min-height: 80px;
+  text-align: center;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+.group__container
+{
+  display: flex;
+  flex-direction: column;
 }
