@@ -18,7 +18,7 @@ export default function PeriodicTable(props)
  
     //#region Group Headers and Period Headers
         groups[0] = [];
-        groups[0].push(<GroupPeriodHeaderItem key="group__period__header__item" />);
+        groups[0].push(<GroupPeriodHeaderItem id="group_header_block" key="group__period__header__item" />);
 
         for(let i=1;i<=18;i++)
         {
@@ -55,7 +55,7 @@ export default function PeriodicTable(props)
     //#region Final View
         for(let i=0;i<=18;i++)
         {
-            view.push(<div key={"group__container__"+i} className="group__container">{groups[i]}</div>);
+            view.push(<div id={i==0?"groupHeader":""} key={"group__container__"+i} className="group__container">{groups[i]}</div>);
         }
     //#endregion
 
