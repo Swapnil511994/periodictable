@@ -6217,54 +6217,7 @@ let obj = {
             },
             "block": "p"
         },
-        {
-            "name": "Ununennium",
-            "appearance": null,
-            "atomic_mass": 315,
-            "boil": 630,
-            "category": "unknown, but predicted to be an alkali metal",
-            "density": 3,
-            "discovered_by": "GSI Helmholtz Centre for Heavy Ion Research",
-            "melt": null,
-            "molar_heat": null,
-            "named_by": null,
-            "number": 119,
-            "period": 8,
-            "group": 1,
-            "phase": "Solid",
-            "source": "https://en.wikipedia.org/wiki/Ununennium",
-            "bohr_model_image":null,
-            "bohr_model_3d":null,
-            "spectral_img": null,
-            "summary": "Ununennium, also known as eka-francium or simply element 119, is the hypothetical chemical element with symbol Uue and atomic number 119. Ununennium and Uue are the temporary systematic IUPAC name and symbol respectively, until a permanent name is decided upon. In the periodic table of the elements, it is expected to be an s-block element, an alkali metal, and the first element in the eighth period.",
-            "symbol": "Uue",
-            "xpos": 1,
-            "ypos": 8,
-            "wxpos": 1,
-            "wypos": 8,
-            "shells": [
-                2,
-                8,
-                18,
-                32,
-                32,
-                18,
-                8,
-                1
-            ],
-            "electron_configuration": "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6 7s2 5f14 6d10 7p6 8s1",
-            "electron_configuration_semantic": "*[Uuo] 8s1",
-            "electron_affinity": 63.87,
-            "electronegativity_pauling": null,
-            "ionization_energies": [],
-            "cpk-hex": null,
-            "image":{
-                "title": "No Image Found",
-                "url": "https://images-of-elements.com/s/transactinoid.png",
-                "attribution": "Chemical Elments A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com"
-            },
-            "block": "s"
-        }
+       
     ]
 };
 
@@ -6274,3 +6227,54 @@ function getData()
 }
 
 module.exports = getData;
+
+
+
+// {
+//     "name": "Ununennium",
+//     "appearance": null,
+//     "atomic_mass": 315,
+//     "boil": 630,
+//     "category": "unknown, but predicted to be an alkali metal",
+//     "density": 3,
+//     "discovered_by": "GSI Helmholtz Centre for Heavy Ion Research",
+//     "melt": null,
+//     "molar_heat": null,
+//     "named_by": null,
+//     "number": 119,
+//     "period": 8,
+//     "group": 1,
+//     "phase": "Solid",
+//     "source": "https://en.wikipedia.org/wiki/Ununennium",
+//     "bohr_model_image":null,
+//     "bohr_model_3d":null,
+//     "spectral_img": null,
+//     "summary": "Ununennium, also known as eka-francium or simply element 119, is the hypothetical chemical element with symbol Uue and atomic number 119. Ununennium and Uue are the temporary systematic IUPAC name and symbol respectively, until a permanent name is decided upon. In the periodic table of the elements, it is expected to be an s-block element, an alkali metal, and the first element in the eighth period.",
+//     "symbol": "Uue",
+//     "xpos": 1,
+//     "ypos": 8,
+//     "wxpos": 1,
+//     "wypos": 8,
+//     "shells": [
+//         2,
+//         8,
+//         18,
+//         32,
+//         32,
+//         18,
+//         8,
+//         1
+//     ],
+//     "electron_configuration": "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6 7s2 5f14 6d10 7p6 8s1",
+//     "electron_configuration_semantic": "*[Uuo] 8s1",
+//     "electron_affinity": 63.87,
+//     "electronegativity_pauling": null,
+//     "ionization_energies": [],
+//     "cpk-hex": null,
+//     "image":{
+//         "title": "No Image Found",
+//         "url": "https://images-of-elements.com/s/transactinoid.png",
+//         "attribution": "Chemical Elments A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com"
+//     },
+//     "block": "s"
+// }
