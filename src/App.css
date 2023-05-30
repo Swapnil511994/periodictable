@@ -3,6 +3,23 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+/* Scroll bar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 
 /* NAV styles
 nav {
@@ -168,7 +185,7 @@ nav.dark .toggler--slider {
   background: #2b2d2e;
   box-shadow: 0 0 0.5rem #252627;
   z-index: 3;
-  padding-block: 4px 0px;
+  padding-block: 6px 0px;
 }
 
 .group__container
@@ -259,5 +276,6 @@ nav.dark .toggler--slider {
 
 .unknown__phase
 {
-  border: 1px dotted dashed solid double;
+  border: 1px;
+  border-style: dotted dashed solid double;
 }
