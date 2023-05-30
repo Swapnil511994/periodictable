@@ -39,16 +39,18 @@ export default function PeriodicTable(props)
         {
             for(let j=1;j<=7;j++)
             {
-                groups[i][j] = <PeriodicTableElement key={"periodic__table__element__"+i+"__"+j} element={null} />
+                groups[i][j] = <PeriodicTableElement key={"periodic__table__element__"+i+"__"+j} element={null} />;
             }
         }
-
-
+        
         while (position<elements.length) {
             let element = elements[position];
             groups[element.group][element.period] = <PeriodicTableElement key={"periodic__table__element"+element.group+"__"+element.period} element={element} />;
             position++;
         }
+        groups[3][6] = <PeriodicTableElement key={"periodic__table__element__3__6"} element={{name:"Lanthanoids",phase:"solid",symbol:"57-71",number:"*"}} />;
+        groups[3][7] = <PeriodicTableElement key={"periodic__table__element__3__7"} element={{name:"Actinoids",phase:"solid",symbol:"89-103",number:"**"}} />;
+
     //#endregion
 
     //#region Final View

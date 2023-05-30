@@ -5,7 +5,7 @@ export default function PeriodicTableElement(props)
     if(elem.phase)
     {
         classVal="periodicElement";
-        switch(elem.phase.toLowerCase())
+        switch(elem.phase.toLowerCase().trim())
         {
             case "gas": classVal+=" gas";
             break;
