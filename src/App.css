@@ -106,7 +106,7 @@ nav.dark .toggler--slider {
   flex-direction: row;
   width: 100%;
   color: #DEEBF8;
-  background-color: #000000;
+  background: radial-gradient(#636669, #252627);
   align-content: center;
   justify-content: flex-start;
   align-items: flex-start;
@@ -121,7 +121,8 @@ nav.dark .toggler--slider {
   min-width: 73px;
   color: #ffffff;
   min-height: 40px;
-  background-color: #000000;
+  background: #2b2d2e;
+  box-shadow: 0 0 0.5rem #252627;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -158,14 +159,16 @@ nav.dark .toggler--slider {
   flex-direction: column;
   justify-content: center;
   min-width: 40px;
-  min-height: 75px;
+  min-height: 5rem;
   font-size: 18px;
   text-align: center;
   border-bottom: 1px solid;
   border-left: 1px solid;
   border-right: 1px solid;
-  background-color: #000000;
+  background: #2b2d2e;
+  box-shadow: 0 0 0.5rem #252627;
   z-index: 3;
+  padding-block: 4px 0px;
 }
 
 .group__container
@@ -196,9 +199,9 @@ nav.dark .toggler--slider {
 
 .periodicElement
 {
-  height: 70px;
-  width: 70px;
-  background-color: #636669;
+  height: 5rem;
+  width: 5rem;
+  /* background-color: #636669; */
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -206,34 +209,55 @@ nav.dark .toggler--slider {
   /* justify-content: center; */
   align-items: center;
   font-size: 14px;
-  margin-left: 1px;
-  margin-right: 1px;
-  margin-top: 3px;
-  padding: 1px;
+  margin: 2.5px;
+  /* padding:1px; */
 }
 
 .emptyElement
 {
-  height: 70px;
-  width: 70px;
-  margin-left: 5px;
-  margin-top: 5px;
+  height: 5rem;
+  width: 5rem;
+  margin: 2.5px;
   background-color:transparent;
+  border: 1px solid transparent;
 }
 
 .element__number
 {
-  font-size: 1rem;
+  font-size: 12px;
   align-self: flex-start;
+  margin-left: 2px;
+  margin-top: 2px;
 }
 
 .element__symbol
 {
   text-align: center;
   word-break: break-word;
+  font-size: 22px;
+}
+
+.element__name
+{
+  word-break: break-word;
 }
 
 .gas
 {
   border: 1px dashed;
+}
+
+.solid
+{
+  border: 1px double;
+}
+
+.liquid
+{
+  border: 1px solid;
+}
+
+.unknown__phase
+{
+  border: 1px dotted dashed solid double;
 }
