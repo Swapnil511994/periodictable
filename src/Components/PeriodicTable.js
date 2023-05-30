@@ -26,7 +26,6 @@ export default function PeriodicTable(props)
             groups[i].push(<GroupHeaderItem key={"group__header__item__"+i} text={i} />);
         }
 
-        let periodCount = 1;
         for(let i=1;i<=7;i++)
         {
         groups[0].push(<PeriodHeaderItem key={"period__header__item__"+i} text={i} />);
@@ -55,7 +54,7 @@ export default function PeriodicTable(props)
     //#region Final View
         for(let i=0;i<=18;i++)
         {
-            view.push(<div id={i==0?"groupHeader":""} key={"group__container__"+i} className="group__container">{groups[i]}</div>);
+            view.push(<div id={i===0?"groupHeader":""} key={"group__container__"+i} className="group__container">{groups[i]}</div>);
         }
     //#endregion
 
