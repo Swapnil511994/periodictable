@@ -374,20 +374,40 @@ nav.dark .toggler--slider {
   border: 3px solid;
   height: 8rem;
   width: 8rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .ed__atomic_number
 {
-  font-size: 14px;
+  font-size: 15px;
   margin-left: 4px;
   margin-top: 4px;
+  align-self: flex-start;
 }
+
+.ed__symbol
+{
+  font-size: 28px;
+  margin-top: 1rem;
+}
+
+.ed__name
+{
+  font-size: 16px;
+  margin-top: .5rem;
+} 
+
+
 
 .slider__container
 {
   height: 5rem;
   width: 100%;
-  display: flex;
+  display: none;
 }
 
 .slider__block

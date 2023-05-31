@@ -7,6 +7,12 @@ export default function ControlItem(props)
             <div className="block__container">
                 <div className="element__description">
                     <abbr className="ed__atomic_number">Atomic Number</abbr>
+                    <span className="ed__symbol">Symbol</span>
+                    <span className="ed__name">Element Name</span>
+                </div>
+
+                <div className="state__container">
+                    
                 </div>
             </div>
             <div className="slider__container">
