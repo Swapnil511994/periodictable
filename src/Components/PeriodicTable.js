@@ -28,8 +28,11 @@ export default function PeriodicTable(props)
 
         for(let i=1;i<=7;i++)
         {
-        groups[0].push(<PeriodHeaderItem key={"period__header__item__"+i} text={i} />);
+            groups[0].push(<PeriodHeaderItem key={"period__header__item__"+i} text={i} />);
         }
+        // groups[0].push(<PeriodHeaderItem key={"period__header__item__8"} text="" />);
+        // groups[0].push(<PeriodHeaderItem key={"period__header__item__9"} text="" />);
+        // groups[0].push(<PeriodHeaderItem key={"period__header__item__10"} text="" />);
     //#endregion
 
     //#region Add Elements to groups
@@ -37,19 +40,33 @@ export default function PeriodicTable(props)
 
         for(let i=1;i<=18;i++)
         {
-            for(let j=1;j<=7;j++)
+            for(let j=1;j<=10;j++)
             {
-                groups[i][j] = <PeriodicTableElement key={"periodic__table__element__"+i+"__"+j} element={null} />;
+                groups[i][j] = <PeriodicTableElement key={"pte__"+i+"__"+j} element={null} />;
             }
         }
         
         while (position<elements.length) {
             let element = elements[position];
-            groups[element.group][element.period] = <PeriodicTableElement key={"periodic__table__element"+element.group+"__"+element.period} element={element} />;
+            groups[element.group][element.period] = <PeriodicTableElement key={"pte__"+element.group+"__"+element.period} element={element} />;
             position++;
         }
-        groups[3][6] = <PeriodicTableElement key={"periodic__table__element__3__6"} element={{name:"Lanthanoids",phase:"solid",symbol:"57-71",number:"*"}} />;
-        groups[3][7] = <PeriodicTableElement key={"periodic__table__element__3__7"} element={{name:"Actinoids",phase:"solid",symbol:"89-103",number:"**"}} />;
+        groups[3][6] = <PeriodicTableElement key={"pte__3__6"} element={{name:"Lanthanoids",phase:"solid",symbol:"57-71",number:"*"}} />;
+        groups[3][7] = <PeriodicTableElement key={"pte__3__7"} element={{name:"Actinoids",phase:"solid",symbol:"89-103",number:"**"}} />;
+
+        let groupCount=3;
+        for(let i=56;i<=70;i++)
+        {
+            let element = elements[i];
+            groups[groupCount++][9]=<PeriodicTableElement key={"pte__lanthanoids"+element.group+"__"+element.period} element={element} />;
+        }
+
+        groupCount=3;
+        for(let i=88;i<=102;i++)
+        {
+            let element = elements[i];
+            groups[groupCount++][10]=<PeriodicTableElement key={"pte__actinide"+element.group+"__"+element.period} element={element} />;
+        }
 
     //#endregion
 
