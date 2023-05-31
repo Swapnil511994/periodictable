@@ -345,3 +345,59 @@ nav.dark .toggler--slider {
   color: #b7950b;
   border-color: #b7950b;
 }
+
+/* Control Item */
+.control__item__container
+{
+  height: 15rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  width: 45rem;
+  position: absolute;
+  top: 4rem;
+  left: 20rem;
+  color: white;
+}
+
+.block__container
+{
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.element__description
+{
+  border: 3px solid;
+  height: 8rem;
+  width: 8rem;
+}
+
+.ed__atomic_number
+{
+  font-size: 14px;
+  margin-left: 4px;
+  margin-top: 4px;
+}
+
+.slider__container
+{
+  height: 5rem;
+  width: 100%;
+  display: flex;
+}
+
+.slider__block
+{
+  width: 100%;
+  padding: 5px;
+}
+.temperature__slider
+{
+  border-radius: 5px;
+  width: 100%;
+}
+

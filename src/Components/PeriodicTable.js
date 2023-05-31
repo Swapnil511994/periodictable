@@ -4,6 +4,7 @@ import GroupHeaderItem from "./GroupHeaderItem";
 import GroupPeriodHeaderItem from "./GroupPeriodHeaderItem";
 import PeriodHeaderItem from "./PeriodHeaderItem";
 import PeriodicTableElement from "./PeriodicTableElement";
+import ControlItem from "./ControlItem";
 
 export default function PeriodicTable(props)
 {
@@ -11,11 +12,39 @@ export default function PeriodicTable(props)
         const [elements, setElements] = React.useState(()=>{
             return datum();
         });
+
         let groups = [];
+        let groupCount=3;
         let view = [];
         let position = 0;
+
+        const [controlObj,setControlObj] = React.useState({
+            alkali_metals: true,
+            alkali_earth_metals: true,
+            lanthanoids: true,
+            actinoids: true,
+            transition_metals: true,
+            post_transition_metals: true,
+            mettaloids: true,
+            other_nonmetals: true,
+            noble_gases: true,
+            unknown: true,
+            temperature: 273 //in K
+        });
     //#endregion
  
+    //#region State Functions
+        function changeTemperature(event)
+        {
+            setControlObj((oldVal)=>{
+                return {
+                    ...oldVal,
+                    temperature: event.target.value
+                };
+            });
+        }
+    //#endregion
+
     //#region Group Headers and Period Headers
         groups[0] = [];
         groups[0].push(<GroupPeriodHeaderItem id="group_header_block" key="group__period__header__item" />);
@@ -30,9 +59,9 @@ export default function PeriodicTable(props)
         {
             groups[0].push(<PeriodHeaderItem key={"period__header__item__"+i} text={i} />);
         }
-        // groups[0].push(<PeriodHeaderItem key={"period__header__item__8"} text="" />);
-        // groups[0].push(<PeriodHeaderItem key={"period__header__item__9"} text="" />);
-        // groups[0].push(<PeriodHeaderItem key={"period__header__item__10"} text="" />);
+        groups[0].push(<PeriodHeaderItem key={"period__header__item__8"} text="" />);
+        groups[0].push(<PeriodHeaderItem key={"period__header__item__9"} text="" />);
+        groups[0].push(<PeriodHeaderItem key={"period__header__item__10"} text="" />);
     //#endregion
 
     //#region Add Elements to groups
@@ -54,7 +83,6 @@ export default function PeriodicTable(props)
         groups[3][6] = <PeriodicTableElement key={"pte__3__6"} element={{name:"Lanthanoids",phase:"solid",symbol:"57-71",number:"*",category:"lanthanide"}} />;
         groups[3][7] = <PeriodicTableElement key={"pte__3__7"} element={{name:"Actinoids",phase:"solid",symbol:"89-103",number:"**", category:"actinide"}} />;
 
-        let groupCount=3;
         for(let i=56;i<=70;i++)
         {
             let element = elements[i];
@@ -70,7 +98,11 @@ export default function PeriodicTable(props)
 
     //#endregion
 
-    //#region Final View
+    //#region Control Header
+        let controlItem = <ControlItem controls={controlObj} handleTemperatureChange={changeTemperature} />;
+    //#endregion
+
+    //#region Final View Object
         for(let i=0;i<=18;i++)
         {
             view.push(<div id={i===0?"groupHeader":""} key={"group__container__"+i} className="group__container">{groups[i]}</div>);
@@ -78,8 +110,11 @@ export default function PeriodicTable(props)
     //#endregion
 
     return (
+        <>
+        {controlItem}
         <div className="periodic__div">
             {view}
         </div>
+        </>
     );
 }
