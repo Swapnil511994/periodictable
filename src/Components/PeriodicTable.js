@@ -65,7 +65,7 @@ export default function PeriodicTable(props)
     //#endregion
 
     //#region Add Elements to groups
-        console.log(elements);
+        // console.log(elements);
 
         for(let i=1;i<=18;i++)
         {
