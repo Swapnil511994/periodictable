@@ -185,7 +185,7 @@ nav.dark .toggler--slider {
   background: #2b2d2e;
   box-shadow: 0 0 0.5rem #252627;
   z-index: 3;
-  padding-block: 6px 0px;
+  padding-block: 10px 0px;
 }
 
 .group__container
@@ -235,7 +235,7 @@ nav.dark .toggler--slider {
   width: 5rem;
   margin: 2.5px;
   background-color:transparent;
-  border: 1px solid transparent;
+  border: 3px solid transparent;
 }
 
 .element__number
@@ -256,25 +256,26 @@ nav.dark .toggler--slider {
 .element__name
 {
   word-break: break-word;
+  margin-left: 2px;
 }
 
 .gas
 {
-  border: 1px dashed;
+  border: 3px dashed;
 }
 
 .solid
 {
-  border: 1px double;
+  border: 3px double;
 }
 
 .liquid
 {
-  border: 1px solid;
+  border: 3px solid;
 }
 
 .unknown__phase
 {
-  border: 1px;
+  border: 3px;
   border-style: dotted dashed solid double;
 }
