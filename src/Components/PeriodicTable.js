@@ -110,11 +110,9 @@ export default function PeriodicTable(props)
     //#endregion
 
     return (
-        <>
-        {controlItem}
         <div className="periodic__div">
             {view}
+            {controlItem}
         </div>
-        </>
     );
 }

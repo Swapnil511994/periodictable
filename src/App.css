@@ -130,6 +130,7 @@ nav.dark .toggler--slider {
   overflow-x: scroll;
   height: 100vh;
   overflow-y: scroll;
+  position: relative;
 }
 
 
@@ -198,6 +199,7 @@ nav.dark .toggler--slider {
 {
   position: sticky;
   left: 0px;
+  z-index: 5;
 }
 
 #group_header_block
@@ -358,6 +360,8 @@ nav.dark .toggler--slider {
   top: 4rem;
   left: 20rem;
   color: white;
+  /* transform: translate(0, 0); */
+  z-index: 1;
 }
 
 .block__container
@@ -369,6 +373,7 @@ nav.dark .toggler--slider {
   align-items: center;
 }
 
+/* Element Description Classes */
 .element__description
 {
   border: 3px solid;
@@ -400,6 +405,7 @@ nav.dark .toggler--slider {
   font-size: 16px;
   margin-top: .5rem;
 } 
+/*End Of Element Descriptor Classes */
 
 
 
