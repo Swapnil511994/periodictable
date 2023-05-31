@@ -279,3 +279,69 @@ nav.dark .toggler--slider {
   border: 3px;
   border-style: dotted dashed solid double;
 }
+
+.alkali__metal
+{
+  color: #e74d3c;
+  border-color: #e74d3c;
+}
+
+.diatomic__nonmetal
+{
+  color: #95a6a7;
+  border-color: #95a6a7;
+}
+
+.alkaline__earth__metal
+{
+  color: #e77e23;
+  border-color: #e77e23;
+}
+
+.transition__metal
+{
+  color: #f1c40e;
+  border-color: #f1c40e;
+}
+
+.metalloid
+{
+  color: #3398db;
+  border-color: #3398db;
+}
+
+.polyatomic__nonmetal
+{
+  color: #95a6a7;
+  border-color: #95a6a7;
+}
+
+.noble__gas
+{
+  color: #8d43ad;
+  border-color: #8d43ad;
+}
+
+.post__transition__metal
+{
+  color: #1abc9c;
+  border-color: #1abc9c;
+}
+
+.actinide
+{
+  color: #ea9971;
+  border-color: #ea9971;
+}
+
+.lanthanide
+{
+  color: #f4c3a9;
+  border-color: #f4c3a9;
+}
+
+.unknown__catrgory
+{
+  color: #b7950b;
+  border-color: #b7950b;
+}

@@ -51,8 +51,8 @@ export default function PeriodicTable(props)
             groups[element.group][element.period] = <PeriodicTableElement key={"pte__"+element.group+"__"+element.period} element={element} />;
             position++;
         }
-        groups[3][6] = <PeriodicTableElement key={"pte__3__6"} element={{name:"Lanthanoids",phase:"solid",symbol:"57-71",number:"*"}} />;
-        groups[3][7] = <PeriodicTableElement key={"pte__3__7"} element={{name:"Actinoids",phase:"solid",symbol:"89-103",number:"**"}} />;
+        groups[3][6] = <PeriodicTableElement key={"pte__3__6"} element={{name:"Lanthanoids",phase:"solid",symbol:"57-71",number:"*",category:"lanthanide"}} />;
+        groups[3][7] = <PeriodicTableElement key={"pte__3__7"} element={{name:"Actinoids",phase:"solid",symbol:"89-103",number:"**", category:"actinide"}} />;
 
         let groupCount=3;
         for(let i=56;i<=70;i++)
