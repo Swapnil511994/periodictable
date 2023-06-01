@@ -1,3 +1,9 @@
+*{
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
 body{
   margin: 0px;
   font-family: 'Roboto', sans-serif;
@@ -281,7 +287,7 @@ nav.dark .toggler--slider {
 .unknown__phase
 {
   border: 3px;
-  border-style: dotted dashed solid double;
+  border-style: dotted;
 }
 
 .alkali__metal
@@ -459,7 +465,7 @@ nav.dark .toggler--slider {
 
 .unknown__descriptor
 {
-  border-style: dotted dashed solid double;
+  border-style: dotted;
 }
 
 .category__container

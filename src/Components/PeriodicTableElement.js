@@ -1,24 +1,39 @@
 export default function PeriodicTableElement(props)
 {
     let elem = props.element || {};
+    let temperature = props.currentTemperature;
+    // console.log(temperature);
     let classVal = "";
     if(elem.phase)
     {
         classVal="periodicElement";
+
+        let stateClass = "";
+        
         switch(elem.phase.toLowerCase().trim())
         {
-            case "gas": classVal+=" gas";
+            case "gas": stateClass=" gas";
             break;
 
-            case "liquid": classVal+=" liquid";
+            case "liquid": stateClass=" liquid";
             break;
 
-            case "solid": classVal+=" solid";
+            case "solid": stateClass=" solid";
             break;
 
-            default: classVal+=" unknown__phase";
+            default: stateClass=" unknown__phase";
             break;
         }
+        if(elem.hasOwnProperty("melt"))
+        {
+            if(elem.boil && temperature > elem.boil) stateClass=" gas";
+            else if(elem.melt && temperature > elem.melt) stateClass=" liquid";
+            else if(elem.melt && temperature < elem.melt) stateClass=" solid";
+            else stateClass=" unknown__phase";
+        }
+        
+
+        classVal+=stateClass;
 
         if(elem.category)
         {

@@ -65,8 +65,6 @@ export default function PeriodicTable(props)
     //#endregion
 
     //#region Add Elements to groups
-        // console.log(elements);
-
         for(let i=1;i<=18;i++)
         {
             for(let j=1;j<=11;j++)
@@ -77,7 +75,7 @@ export default function PeriodicTable(props)
         
         while (position<elements.length) {
             let element = elements[position];
-            groups[element.group][element.period] = <PeriodicTableElement key={"pte__"+element.group+"__"+element.period} element={element} />;
+            groups[element.group][element.period] = <PeriodicTableElement key={"pte__"+element.group+"__"+element.period} element={element} currentTemperature={controlObj.temperature} />;
             position++;
         }
         groups[3][6] = <PeriodicTableElement key={"pte__3__6"} element={{name:"Lanthanoids",phase:"solid",symbol:"57-71",number:"*",category:"lanthanide"}} />;
@@ -86,14 +84,14 @@ export default function PeriodicTable(props)
         for(let i=56;i<=70;i++)
         {
             let element = elements[i];
-            groups[groupCount++][9]=<PeriodicTableElement key={"pte__lanthanoids"+element.group+"__"+element.period} element={element} />;
+            groups[groupCount++][9]=<PeriodicTableElement key={"pte__lanthanoids"+element.group+"__"+element.period} element={element} currentTemperature={controlObj.temperature} />;
         }
 
         groupCount=3;
         for(let i=88;i<=102;i++)
         {
             let element = elements[i];
-            groups[groupCount++][10]=<PeriodicTableElement key={"pte__actinide"+element.group+"__"+element.period} element={element} />;
+            groups[groupCount++][10]=<PeriodicTableElement key={"pte__actinide"+element.group+"__"+element.period} element={element} currentTemperature={controlObj.temperature} />;
         }
 
     //#endregion
@@ -107,6 +105,14 @@ export default function PeriodicTable(props)
         {
             view.push(<div id={i===0?"groupHeader":""} key={"group__container__"+i} className="group__container">{groups[i]}</div>);
         }
+    //#endregion
+
+    //#region experimental code
+        // for (let i = 0; i < elements.length; i++) {
+        //     const element = elements[i];
+        //     if(!element.melt) console.log(`${element.name}: missing melting point`);
+        //     // if(!element.boil) console.log(`${element.name}: missing boiling point`);
+        // }
     //#endregion
 
     return (
