@@ -1,6 +1,7 @@
 body{
   margin: 0px;
   font-family: 'Roboto', sans-serif;
+  cursor: pointer;
 }
 
 /* Scroll bar */
