@@ -69,7 +69,7 @@ export default function PeriodicTable(props)
 
         for(let i=1;i<=18;i++)
         {
-            for(let j=1;j<=10;j++)
+            for(let j=1;j<=11;j++)
             {
                 groups[i][j] = <PeriodicTableElement key={"pte__"+i+"__"+j} element={null} />;
             }
