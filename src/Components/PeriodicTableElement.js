@@ -2,14 +2,12 @@ export default function PeriodicTableElement(props)
 {
     let elem = props.element || {};
     let temperature = props.currentTemperature;
-    // console.log(temperature);
     let classVal = "";
+    let stateClass = "";
+
     if(elem.phase)
     {
         classVal="periodicElement";
-
-        let stateClass = "";
-        
         switch(elem.phase.toLowerCase().trim())
         {
             case "gas": stateClass=" gas";
@@ -31,8 +29,6 @@ export default function PeriodicTableElement(props)
             else if(elem.melt && temperature < elem.melt) stateClass=" solid";
             else stateClass=" unknown__phase";
         }
-        
-
         classVal+=stateClass;
 
         if(elem.category)
@@ -77,7 +73,7 @@ export default function PeriodicTableElement(props)
     else classVal="emptyElement";
 
     return (
-        <div className={classVal}>
+        <div className={classVal} onClick={props.handleClick? ()=>props.handleClick(elem.number-1):()=>{}}>
             <abbr className="element__number">{elem.number}</abbr>
             <span className="element__symbol">{elem.symbol}</span>
             <span className="element__name">{elem.name}</span>

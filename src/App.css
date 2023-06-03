@@ -7,7 +7,7 @@
 body{
   margin: 0px;
   font-family: 'Roboto', sans-serif;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 /* Scroll bar */
@@ -236,6 +236,7 @@ nav.dark .toggler--slider {
   align-items: center;
   font-size: 14px;
   margin: 2.5px;
+  cursor: pointer;
 }
 
 .emptyElement
@@ -623,4 +624,94 @@ nav.dark .toggler--slider {
 .temperature__unit__converter > p:last-child
 {
   margin-top: 4px;
+}
+
+
+/* Modal */
+.element__info__modal
+{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-blend-mode: color-burn;
+  display: block;
+  background-color: rgba(59, 58, 58, 0.975);
+  /* opacity: 0.9; */
+  /* background-color: white; */
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 7;
+  margin: 0px;
+  overflow: hidden;
+  /* padding-block: 0px 20px; */
+}
+
+.element__info__modal__closed
+{
+  display: none;
+}
+
+.modal__title__row
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.modal__title
+{
+  font-size: 22px;
+  margin: 0px;
+  padding: 0px;
+  font-size: 40px;
+  margin-left: 15px;
+}
+
+.modal__close__btn
+{
+  height: 40px;
+  width: 40px;
+  font-size: 30px;
+  font-weight: 100;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  background: transparent;
+  color: white;
+  border: 1px solid;
+  padding-bottom: 1%;
+  border-radius: 5px;
+}
+
+.modal__description
+{
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: left;
+}
+
+.modal__3d
+{
+  min-height: 300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+model-viewer
+{
+  height: inherit;
+  width: inherit;
 }

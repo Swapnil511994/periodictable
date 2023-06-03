@@ -5,6 +5,7 @@ import GroupPeriodHeaderItem from "./GroupPeriodHeaderItem";
 import PeriodHeaderItem from "./PeriodHeaderItem";
 import PeriodicTableElement from "./PeriodicTableElement";
 import ControlItem from "./ControlItem";
+import PeriodicTableElementInformation from "./PeriodicTableElementInformation";
 
 export default function PeriodicTable(props)
 {
@@ -12,6 +13,10 @@ export default function PeriodicTable(props)
         const [elements, setElements] = React.useState(()=>{
             return datum();
         });
+
+        const [selectedElement, setSelectedElement] = React.useState({});
+
+        const [isPopupVisible, setIsPopupVisible] = React.useState(false);
 
         let groups = [];
         let groupCount=3;
@@ -33,7 +38,7 @@ export default function PeriodicTable(props)
         });
     //#endregion
  
-    //#region State Functions
+    //#region Functions
         function changeTemperature(event)
         {
             setControlObj((oldVal)=>{
@@ -42,6 +47,19 @@ export default function PeriodicTable(props)
                     temperature: event.target.value
                 };
             });
+        }
+
+        function showElementInfo(elementIndex)
+        {
+            // alert(`${elements[elementIndex].name} was Clicked bois`);
+            setSelectedElement(elements[elementIndex]);
+            setIsPopupVisible(true);
+        }
+
+        function closeModal()
+        {
+            setSelectedElement(null);
+            setIsPopupVisible(false);
         }
     //#endregion
 
@@ -75,7 +93,8 @@ export default function PeriodicTable(props)
         
         while (position<elements.length) {
             let element = elements[position];
-            groups[element.group][element.period] = <PeriodicTableElement key={"pte__"+element.group+"__"+element.period} element={element} currentTemperature={controlObj.temperature} />;
+            groups[element.group][element.period] = <PeriodicTableElement key={"pte__"+element.group+"__"+element.period} element={element} 
+                                                        currentTemperature={controlObj.temperature} handleClick={showElementInfo} />;
             position++;
         }
         groups[3][6] = <PeriodicTableElement key={"pte__3__6"} element={{name:"Lanthanoids",phase:"solid",symbol:"57-71",number:"*",category:"lanthanide"}} />;
@@ -84,14 +103,16 @@ export default function PeriodicTable(props)
         for(let i=56;i<=70;i++)
         {
             let element = elements[i];
-            groups[groupCount++][9]=<PeriodicTableElement key={"pte__lanthanoids"+element.group+"__"+element.period} element={element} currentTemperature={controlObj.temperature} />;
+            groups[groupCount++][9]=<PeriodicTableElement key={"pte__lanthanoids"+element.group+"__"+element.period} element={element} 
+                                        currentTemperature={controlObj.temperature} handleClick={showElementInfo} />;
         }
 
         groupCount=3;
         for(let i=88;i<=102;i++)
         {
             let element = elements[i];
-            groups[groupCount++][10]=<PeriodicTableElement key={"pte__actinide"+element.group+"__"+element.period} element={element} currentTemperature={controlObj.temperature} />;
+            groups[groupCount++][10]=<PeriodicTableElement key={"pte__actinide"+element.group+"__"+element.period} element={element} 
+                                        currentTemperature={controlObj.temperature} handleClick={showElementInfo} />;
         }
 
     //#endregion
@@ -119,6 +140,7 @@ export default function PeriodicTable(props)
         <div className="periodic__div">
             {view}
             {controlItem}
+            <PeriodicTableElementInformation visiblity={isPopupVisible} element={selectedElement} closeModal={closeModal} />
         </div>
     );
 }
