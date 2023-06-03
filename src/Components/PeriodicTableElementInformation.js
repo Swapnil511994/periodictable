@@ -13,6 +13,11 @@ export default function PeriodicTableElementInformation(props)
         visiblity = false;
     }
 
+    function Capify(str)
+    {
+        return str.charAt(0).toUpperCase()+str.substring(1);
+    }
+
     if(!visiblity) return(<div className="element__info__modal__closed"></div>);
     
     return (
@@ -26,6 +31,20 @@ export default function PeriodicTableElementInformation(props)
             <hr />
             <div className="modal__description">
                 {element.summary}
+            </div>
+            <div>
+                <h3>Overview</h3>
+                <table border={0} className="modal__element__table">
+                    <tr><td>Atomic Mass</td><td>{element.atomic_mass}</td></tr>
+                    <tr><td>Category</td><td>{Capify(element.category)}</td></tr>
+                    <tr><td>Atomic Number</td><td>{element.number}</td></tr>
+                    <tr><td>Group</td><td>{element.group}</td></tr>
+                    <tr><td>Period</td><td>{element.atomic_mass}</td></tr>
+                    <tr><td>Phase</td><td>{Capify(element.phase)}</td></tr>
+                    <tr><td>Electronic Configuration</td><td>{element.electron_configuration}</td></tr>
+                    {/* <tr><td>EC Semantic</td><td>{element.electron_configuration_semantic}</td></tr> */}
+                    <tr><td>Atomic Mass</td><td>{element.atomic_mass}</td></tr>
+                </table>
             </div>
             <div className="modal__3d">
                 <model-viewer

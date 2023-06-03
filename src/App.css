@@ -715,3 +715,8 @@ model-viewer
   height: inherit;
   width: inherit;
 }
+
+.modal__element__table > tr > td
+{
+  margin-left: 5px;
+}
