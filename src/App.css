@@ -237,6 +237,12 @@ nav.dark .toggler--slider {
   font-size: 14px;
   margin: 2.5px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.periodicElement:hover, .periodicElement:active {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .emptyElement
@@ -356,6 +362,8 @@ nav.dark .toggler--slider {
   color: #b7950b;
   border-color: #b7950b;
 }
+
+
 
 /* Control Item */
 .control__item__container
@@ -536,8 +544,20 @@ nav.dark .toggler--slider {
   align-items: center;
   word-break: break-word;
   text-align: center;
+  transition: transform 0.3s ease;
 }
 
+.category__data__item:hover, .category__data__item:active {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.element__active
+{
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  
+}
 
 /*End Of Element Descriptor Classes */
 

@@ -67,6 +67,13 @@ export default function PeriodicTableElement(props)
                 default: classVal+=" unknown__catrgory";
                 break;
             }
+
+            if(elem.category == props.activeCategory)
+            {
+                classVal+=" element__active";
+            }
+
+            if(props.activeCategory == "polyatomic nonmetal" && (elem.category == "diatomic nonmetal")) classVal+=" element__active";
         }
         
     }

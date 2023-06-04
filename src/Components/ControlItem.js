@@ -37,18 +37,18 @@ export default function ControlItem(props)
                                 Metals
                             </div>
                             <div className="category__data__block">
-                                <div className="category__data__item alkali__metal">Alkali Metals</div>
-                                <div className="category__data__item alkaline__earth__metal">Alkaline Earth Metals</div>
-                                <div className="category__data__item lanthanide">Lanthanoids</div>
-                                <div className="category__data__item actinide">Actinoids</div>
-                                <div className="category__data__item transition__metal">Transition Metals</div>
-                                <div className="category__data__item post__transition__metal">Post-transition Metals</div>
+                                <div className="category__data__item alkali__metal" onMouseEnter={props.handleMouseEnter} onMouseLeave={props.handleMouseLeave} id="alkali__metal__parent">Alkali Metals</div>
+                                <div className="category__data__item alkaline__earth__metal" onMouseEnter={props.handleMouseEnter} onMouseLeave={props.handleMouseLeave} id="alkaline__earth__metal__parent">Alkaline Earth Metals</div>
+                                <div className="category__data__item lanthanide"  onMouseEnter={props.handleMouseEnter} onMouseLeave={props.handleMouseLeave} id="lanthanide__parent">Lanthanoids</div>
+                                <div className="category__data__item actinide" onMouseEnter={props.handleMouseEnter} onMouseLeave={props.handleMouseLeave} id="actinide__parent">Actinoids</div>
+                                <div className="category__data__item transition__metal"  onMouseEnter={props.handleMouseEnter} onMouseLeave={props.handleMouseLeave} id="transition__metal__parent">Transition Metals</div>
+                                <div className="category__data__item post__transition__metal"  onMouseEnter={props.handleMouseEnter} onMouseLeave={props.handleMouseLeave} id="post__transition__metal__parent">Post-transition Metals</div>
                             </div>
                         </div>
 
                         <div className="category__container__row">
                             <div className="category__data__block">
-                                <div className="category__data__item metalloid">Mettaloids</div>
+                                <div className="category__data__item metalloid"  onMouseEnter={props.handleMouseEnter} onMouseLeave={props.handleMouseLeave} id="metalloid__parent">Mettaloids</div>
                             </div>
                         </div>
 
@@ -57,14 +57,14 @@ export default function ControlItem(props)
                                 Non Metals
                             </div>
                             <div className="category__data__block">
-                                <div className="category__data__item polyatomic__nonmetal">Other Non Metals</div>
-                                <div className="category__data__item noble__gas">Noble Gases</div>
+                                <div className="category__data__item polyatomic__nonmetal"  onMouseEnter={props.handleMouseEnter} onMouseLeave={props.handleMouseLeave} id="polyatomic__nonmetal__parent">Other Non Metals</div>
+                                <div className="category__data__item noble__gas"  onMouseEnter={props.handleMouseEnter} onMouseLeave={props.handleMouseLeave} id="noble__gas__parent">Noble Gases</div>
                             </div>
                         </div>
 
                         <div className="category__container__row">
                             <div className="category__data__block">
-                                <div className="category__data__item unknown__catrgory">Unknown</div>
+                                <div className="category__data__item unknown__catrgory"  onMouseEnter={props.handleMouseEnter} onMouseLeave={props.handleMouseLeave} id="unknown__catrgory__parent">Unknown</div>
                             </div>
                         </div>
                     </div>

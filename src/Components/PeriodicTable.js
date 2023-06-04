@@ -24,16 +24,7 @@ export default function PeriodicTable(props)
         let position = 0;
 
         const [controlObj,setControlObj] = React.useState({
-            alkali_metals: true,
-            alkali_earth_metals: true,
-            lanthanoids: true,
-            actinoids: true,
-            transition_metals: true,
-            post_transition_metals: true,
-            mettaloids: true,
-            other_nonmetals: true,
-            noble_gases: true,
-            unknown: true,
+            selectedCategory:"",
             temperature: 273 //in K
         });
     //#endregion
@@ -60,6 +51,32 @@ export default function PeriodicTable(props)
         {
             setSelectedElement(null);
             setIsPopupVisible(false);
+        }
+
+        function selectCategory(event)
+        {
+            let id=event.target.id;
+            let categoryToSet = id.replace("__parent","").replace(/__/g," ");
+            if(categoryToSet == "post transition metal") categoryToSet="post-transition metal";
+            setControlObj((oldVal)=>{
+                return {
+                    ...oldVal,
+                    selectedCategory: categoryToSet
+                };
+            });
+        }
+
+        function deselectCategory(event)
+        {
+            let id=event.target.id;
+            let categoryToSet = id.replace("__parent","").replace(/__/g," ");
+            if(categoryToSet == "post transition metal") categoryToSet="post-transition metal";
+            if(categoryToSet == controlObj.selectedCategory) setControlObj((oldVal)=>{
+                return {
+                    ...oldVal,
+                    selectedCategory:""
+                };
+            });
         }
     //#endregion
 
@@ -94,7 +111,7 @@ export default function PeriodicTable(props)
         while (position<elements.length) {
             let element = elements[position];
             groups[element.group][element.period] = <PeriodicTableElement key={"pte__"+element.group+"__"+element.period} element={element} 
-                                                        currentTemperature={controlObj.temperature} handleClick={showElementInfo} />;
+                                                        activeCategory={controlObj.selectedCategory}    currentTemperature={controlObj.temperature} handleClick={showElementInfo} />;
             position++;
         }
         groups[3][6] = <PeriodicTableElement key={"pte__3__6"} element={{name:"Lanthanoids",phase:"solid",symbol:"57-71",number:"*",category:"lanthanide"}} />;
@@ -104,7 +121,7 @@ export default function PeriodicTable(props)
         {
             let element = elements[i];
             groups[groupCount++][9]=<PeriodicTableElement key={"pte__lanthanoids"+element.group+"__"+element.period} element={element} 
-                                        currentTemperature={controlObj.temperature} handleClick={showElementInfo} />;
+                                        activeCategory={controlObj.selectedCategory}    currentTemperature={controlObj.temperature} handleClick={showElementInfo} />;
         }
 
         groupCount=3;
@@ -112,13 +129,13 @@ export default function PeriodicTable(props)
         {
             let element = elements[i];
             groups[groupCount++][10]=<PeriodicTableElement key={"pte__actinide"+element.group+"__"+element.period} element={element} 
-                                        currentTemperature={controlObj.temperature} handleClick={showElementInfo} />;
+                                        activeCategory={controlObj.selectedCategory}    currentTemperature={controlObj.temperature} handleClick={showElementInfo} />;
         }
 
     //#endregion
 
     //#region Control Header
-        let controlItem = <ControlItem controls={controlObj} handleTemperatureChange={changeTemperature} />;
+        let controlItem = <ControlItem controls={controlObj} handleMouseEnter={selectCategory} handleMouseLeave={deselectCategory} handleTemperatureChange={changeTemperature} />;
     //#endregion
 
     //#region Final View Object
