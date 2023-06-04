@@ -643,7 +643,8 @@ nav.dark .toggler--slider {
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   z-index: 7;
   margin: 0px;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
   /* padding-block: 0px 20px; */
 }
 
@@ -702,21 +703,26 @@ nav.dark .toggler--slider {
 .modal__3d
 {
   min-height: 300px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: center;
-  justify-content: center;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-wrap: nowrap; */
+  /* align-content: center; */
+  /* justify-content: center; */
   width: 100%;
 }
 
 model-viewer
 {
-  height: inherit;
-  width: inherit;
+  height: 400px;
+  width: 400px;
 }
 
 .modal__element__table > tr > td
 {
   margin-left: 5px;
+}
+
+.element__source
+{
+  color: white;
 }
